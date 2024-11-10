@@ -1,0 +1,245 @@
+.leftside-menu{
+    max-width: 320px;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    bottom: -800px;
+    width: 100%;
+    box-shadow: -10px -10px 50px 1px hwb(219 24% 60%);
+    min-height: 676px;
+    background-color: white;
+    transition: all .4s;
+    &__bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none; 
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 254, 254, .9);
+        transition: 0.5s all;
+        z-index: 5;
+    }
+    &__bg.active {
+        opacity: 1; 
+        pointer-events: all; 
+        transition: 0.5s all;
+    }
+    &__container{
+        margin: 0 auto;
+        padding: 0 25px;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__header{
+        max-width: 320px;
+        min-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    &__footer{
+        margin-top: auto;
+    }
+    &__btn-close{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: $btn;
+        position: relative;
+        transition: background-color 0.1s, opacity 0.3s ease-in-out;
+        &::after{
+            content: url(../img/cross.svg);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+    &__logo{
+        margin-right: auto;
+        margin-left: 5px;
+    }
+    &__btn-search{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: $btn;
+        position: relative;
+        transition: background-color 0.1s, opacity 0.3s ease-in-out;
+        &::after{
+            content: url(../img/search.svg);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+    &__text{
+        font-family: 'TT Lakes Medium';
+        font-weight: 500;
+        font-size: 16px;
+        color: #1b1c21;
+        transition: color 0.3s ease-in-out;
+        &:hover{
+            color: #7f264d;
+        }
+    }
+    &__text.active{
+        font-family: 'TT Lakes Medium';
+        font-weight: 500;
+        font-size: 16px;
+        color: $text;
+    }    
+    &__item{
+        margin-bottom: 34px;
+        &:first-child{
+            display: block;
+            position: relative;
+        }
+        &:first-child::before{
+            content: url(../img/border-menu.svg);
+            position: absolute;
+            left: -25px;
+            top: -6px;
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    } 
+    &__footer-list{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 15px;
+        margin-bottom: 20px;
+    }
+    &__list{
+        margin-bottom: 20px;
+    }
+}
+
+.leftside-menu.leftside-menu--close {
+    transform: translateX(-110%);
+}
+
+.leftside-menu__btn-close:hover, 
+.leftside-menu__btn-search:hover,
+.call__btn:hover,
+.chat__btn:hover,
+.profile__btn:hover{
+opacity: 0.75;
+}
+
+.leftside-menu__btn-close:active, 
+.leftside-menu__btn-search:active,
+.call__btn:active,
+.chat__btn:active,
+.profile__btn:active{
+background-color: #cb0943;
+}
+
+.call{
+&__btn{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $btn;
+    position: relative;
+    transition: background-color 0.1s, opacity 0.3s ease-in-out;
+    &::after{
+        content: url(../img/call.svg);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        }
+    }
+}
+
+.chat{
+    &__btn{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: $btn;
+        position: relative;
+        transition: background-color 0.1s, opacity 0.3s ease-in-out;
+        &::after{
+            content: url(../img/chat.svg);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+}
+
+.profile{
+    &__btn{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: $btn;
+        position: relative;
+        margin-right: 20px;
+        transition: background-color 0.1s, opacity 0.3s ease-in-out;
+        &::after{
+            content: url(../img/profile.svg);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+}
+
+.leftside-menu{
+    &__email{
+        display: block;
+        font-family: 'TT Lakes Medium';
+        font-weight: 500;
+        font-size: 16px;
+        color: #1b1c21;
+        margin-bottom: 20px;
+        }
+    &__tel{
+        display: block;
+        font-family: 'TT Lakes Bold';
+        font-weight: 700;
+        font-size: 24px;
+        color: #1b1c21;
+        margin-bottom: 15px;
+        }
+    &__language{
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 10px;
+        margin-bottom: 30px;
+        }    
+    &__language-btn{
+        font-family:'TT Lakes Medium';
+        font-weight: 500;
+        font-size: 16px;
+        color: #1b1c21;
+        margin-bottom: 30px;
+        transition: color 0.3s ease-in-out;
+        &:hover{
+            color: #7f264d;
+        }
+    }
+    &__language-btn.active{
+        font-family:'TT Lakes Medium';
+        font-weight: 500;
+        font-size: 16px;
+        color: $text;
+    }
+}

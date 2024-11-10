@@ -1,0 +1,138 @@
+/* header */
+
+.container {
+  margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1440px;
+	width: 100%;
+}
+
+.header{
+  background-color: $white;
+  border-bottom: 1px solid $border;
+  &__inner{
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+  }
+  &__logo{
+    margin-right: 15px;
+    margin-left: 5px;
+  }
+  &__menu{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+  &__title{
+    display: none;
+  }
+}
+
+.btn{
+  &__burger{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $btn;
+    position: relative;
+  }
+  &__burger .span{
+    display: block;
+    border-radius: 1px;
+    width: 18px;
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    top: 12px;
+    left: 11px;
+  }
+  &__burger .line-2{
+    display: block;
+    border-radius: 1px;
+    width: 10px;
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    top: 19px;
+    left: 11px;
+  }
+  &__burger .line-3{
+    display: block;
+    border-radius: 1px;
+    width: 14px;
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    top: 26px;
+    left: 11px;
+  }
+}
+
+.main-nav{
+  &__list{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    position: relative;
+  }
+  &__item-hidden{
+    display: none;
+  }
+}
+
+.repair{
+  &__link{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $btn;
+    position: relative;
+    &::before{
+      content: '';
+      border-radius: 1px;
+      width: 2px;
+      height: 32px;
+      background-color: $back;
+      display: inline-block;
+      margin: 5px 0 0 -20px;
+      pointer-events: none;
+    }
+    &::after{
+      content: url(../img/repair.svg);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  }
+  &__text{
+    display: none;
+  }
+}
+
+.checkstatus{
+  &__link{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $btn;
+    position: relative;
+    &::after{
+      content: url(../img/checkstatus.svg);
+      position: absolute;
+      top: 10px;
+      left: 12px;
+    }
+  }
+  &__text{
+    display: none;
+  }
+}
+
+
+

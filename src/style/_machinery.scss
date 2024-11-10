@@ -1,0 +1,127 @@
+.machinery{
+  width: 100%;
+    &__title{
+      border-top: 1px solid $border;
+      background: $white;
+      padding-top: 7px;
+    }
+    &__title-text{
+      font-family: 'TT Lakes Regular';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-transform: uppercase;
+      color: $text;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    &__cards{
+      background: #f8f8f8;
+      overflow-x: hidden;
+      width: 100%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+.machinery .machinery{
+  &__item-text{
+    position: absolute;
+    font-family: 'TT Lakes Medium';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    color: #1b1c21;
+    left: 15px;
+    top: 15px;
+  }
+  &__cards-list{
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -5px;
+      width: 24px;
+      height: 166px;
+      padding-top: 25px;
+      background: linear-gradient(270deg, #f8f8f8 0.04%, rgba(248, 248, 248, 0) 100%);
+      z-index: 1;
+    }
+  }
+  &__item-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  &__item-ring{
+    border: 2px solid $btn;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom: -45px;
+    right: 15px;
+    &:after{
+      content: url(../img/checkmark.svg);
+      position: absolute;
+      top: 10px;
+      left: 14px;
+    }
+  }
+}
+
+.machinery__cards .machinery__cards-item{
+  background: $white;
+  border: 1px solid $back;
+  border-radius: 6px;
+  max-width: 242px;
+  height: 162px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.machinery__cards-item:not(:last-child){
+  margin-right: 15px;
+}
+
+.machinery__btn--close,
+.machinery__btn--show{
+  transition: color 0.3s ease-in-out;
+  &:hover{
+    color: #7f264d;
+  }
+  display: none;
+}
+
+
+// swiperMachinery
+
+.swiper-machinery .my-custom-pagination-div2{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.swiper-machinery .swiper-pagination-bullet{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color:  #c3c4ca;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.swiper-machinery .swiper-pagination-bullet:last-child{
+  margin-right: 0px;
+}
+
+.swiper-machinery .swiper-pagination-bullet-active{
+  background-color:  #aba5a5;
+}
