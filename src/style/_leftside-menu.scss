@@ -1,13 +1,12 @@
 .leftside-menu{
     max-width: 320px;
-    position: absolute;
+    position: fixed;
     z-index: 20;
     left: 0;
     top: 0;
-    bottom: -800px;
     width: 100%;
+    height: 100%;
     box-shadow: -10px -10px 50px 1px hwb(219 24% 60%);
-    min-height: 676px;
     background-color: white;
     transition: all .4s;
     &__bg {

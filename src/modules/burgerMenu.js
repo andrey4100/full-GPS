@@ -26,16 +26,17 @@ document.addEventListener('click', (e) => {
 
 // modal-bond
 
-export const bondOpenInmenu = document.querySelector('.chat__btn');
+export const bondOpenInMenu = document.querySelector('.chat__btn');
 const bondOpenInHeader = document.querySelector('.bond__btn');
 const bondClose = document.querySelector('.modal-bond__btn-close');
 const modalBond = document.querySelector('.modal-bond');
 const bgBond = document.querySelector('.modal-bond__bg');
 
-bondOpenInmenu.addEventListener('click', () => {
+bondOpenInMenu.addEventListener('click', () => {
   modalBond.classList.add("modal-bond--open");
   bgBond.classList.add("active");
-  modalCall.classList.remove("modal-call--open");
+  // modalCall.classList.remove("modal-call--open");
+  callOpenInMenu.classList.add("disable");
 });
 
 bondOpenInHeader.addEventListener('click', () => {
@@ -46,6 +47,7 @@ bondOpenInHeader.addEventListener('click', () => {
 bondClose.addEventListener('click', () => {
   modalBond.classList.remove("modal-bond--open");
   bgBond.classList.remove("active");
+  callOpenInMenu.classList.remove("disable");
 });
 
 document.addEventListener('click', (e) => {
@@ -53,6 +55,7 @@ document.addEventListener('click', (e) => {
   if (!withinBoundaries) {
     modalBond.classList.remove("modal-bond--open");
     bgBond.classList.remove("active");
+    callOpenInMenu.classList.remove("disable");
   }
 })
 
@@ -68,7 +71,8 @@ const bgCall = document.querySelector('.modal-call__bg');
 callOpenInMenu.addEventListener('click', () => {
   modalCall.classList.add("modal-call--open");
   bgCall.classList.add("active");
-  modalBond.classList.remove("modal-bond--open");
+  // modalBond.classList.remove("modal-bond--open");
+  bondOpenInMenu.classList.add("disable");
 });
 
 callOpenInHeader.addEventListener('click', () => {
@@ -79,6 +83,7 @@ callOpenInHeader.addEventListener('click', () => {
 callClose.addEventListener('click', () => {
   modalCall.classList.remove("modal-call--open");
   bgCall.classList.remove("active");
+  bondOpenInMenu.classList.remove("disable");
 });
 
 document.addEventListener('click', (e) => {
@@ -86,5 +91,6 @@ document.addEventListener('click', (e) => {
   if (!withinBoundaries) {
     modalCall.classList.remove("modal-call--open");
     bgCall.classList.remove("active");
+    bondOpenInMenu.classList.remove("disable");
   }
 })
